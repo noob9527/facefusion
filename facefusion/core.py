@@ -28,6 +28,7 @@ def cli() -> None:
 	program = ArgumentParser(formatter_class = lambda prog: HelpFormatter(prog, max_help_position = 120), add_help = False)
 	# general
 	program.add_argument('-s', '--source', help = wording.get('source_help'), dest = 'source_path')
+	# program.add_argument('-sa', '--source_array', help = wording.get('source_array_help'), dest = 'source_path_array', nargs = '+')
 	program.add_argument('-t', '--target', help = wording.get('target_help'), dest = 'target_path')
 	program.add_argument('-o', '--output', help = wording.get('output_help'), dest = 'output_path')
 	program.add_argument('-v', '--version', version = metadata.get('name') + ' ' + metadata.get('version'), action = 'version')
@@ -75,6 +76,7 @@ def cli() -> None:
 	# uis
 	group_uis = program.add_argument_group('uis')
 	group_uis.add_argument('--ui-layouts', help = wording.get('ui_layouts_help').format(choices = ', '.join(list_module_names('facefusion/uis/layouts'))), dest = 'ui_layouts', default = [ 'default' ], nargs = '+')
+	# print(program.parse_args())
 	run(program)
 
 

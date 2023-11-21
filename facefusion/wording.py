@@ -4,6 +4,7 @@ WORDING =\
 	'ffmpeg_not_installed': 'FFMpeg is not installed',
 	'install_dependency_help': 'select the variant of {dependency} to install',
 	'source_help': 'select a source image',
+	'source_array_help': 'select a source image array',
 	'target_help': 'select a target image or video',
 	'output_help': 'specify the output file or directory',
 	'frame_processors_help': 'choose from the available frame processors (choices: {choices}, ...)',
