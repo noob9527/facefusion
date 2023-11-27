@@ -145,10 +145,10 @@ def process_frames(source_path : str, temp_frame_paths : List[str], update_progr
 
 	reference_faces = get_face_references() if 'reference' in facefusion.globals.face_recognition else None
 	for temp_frame_path in temp_frame_paths:
-		temp_frame = read_image(temp_frame_path)
+		result_frame = read_image(temp_frame_path)
 		for index, source_face in enumerate(source_face_list):
 			reference_face = reference_faces[index]
-			result_frame = process_frame(source_face, reference_face, temp_frame)
+			result_frame = process_frame(source_face, reference_face, result_frame)
 			write_image(temp_frame_path, result_frame)
 		update_progress()
 
